@@ -1,0 +1,82 @@
+🏦 EJERCICIO INTEGRAL DE PROGRAMACIÓN: SISTEMA DE GESTIÓN BANCARIA
+
+Descripción:
+-------------
+Este ejercicio simula un sistema real de banca digital. El objetivo es desarrollar una aplicación completa que permita a los clientes interactuar con sus cuentas bancarias, transferir dinero, consultar movimientos y más. Incluye uso de interfaces, DAOs, estructuras como HashMap anidados, conexión a base de datos MariaDB, manejo de fechas, excepciones y lógica de negocio con `if`.
+
+Objetivo:
+---------
+Aplicar todos los conocimientos adquiridos sobre POO, DAO, SQL, estructuras de datos y control de flujo en una sola aplicación.
+
+Requisitos:
+-----------
+
+1. Entidades Principales
+   - Cliente (id, nombre, email, contraseña)
+   - Cuenta (id, clienteId, saldo, tipoCuenta)
+   - Movimiento (id, cuentaId, tipo [INGRESO/RETIRADA/TRANSFERENCIA], cantidad, fecha)
+
+2. Base de Datos (MariaDB)
+   - Crea las tablas Cliente, Cuenta y Movimiento
+   - Conexión vía JDBC
+   - CRUD completo con excepciones SQL y control de recursos
+
+3. DAO e Interfaces
+   - Interfaces DAO para ClienteDAO, CuentaDAO y MovimientoDAO
+   - Métodos: guardar, buscarPorId, actualizar, eliminar, listarTodos
+   - Uso de `try-catch` para capturar y registrar errores de conexión o SQL
+
+4. Estructura de Datos
+   - Usa HashMap<Integer, List<Cuenta>> para agrupar cuentas por cliente
+   - Usa HashMap<Integer, List<Movimiento>> para registrar los movimientos por cuenta
+   - Uso de listas, arrays, y estructuras anidadas
+
+5. Interfaces de Servicio
+   - `ServicioBancario` con métodos:
+     - abrirCuenta(Cliente, tipoCuenta)
+     - ingresarDinero(int cuentaId, double cantidad)
+     - retirarDinero(int cuentaId, double cantidad)
+     - transferir(int cuentaOrigenId, int cuentaDestinoId, double cantidad)
+   - `BuscadorCuentas` con métodos:
+     - obtenerCuentasPorCliente(int clienteId)
+     - obtenerSaldoTotal(int clienteId)
+
+6. Seguridad y Condicionales
+   - Verificar contraseña del cliente al iniciar sesión
+   - Validar saldo suficiente antes de permitir retiros o transferencias
+   - `if` para verificar que las cuentas existen antes de operar
+   - Lanzar excepciones como:
+     - `SaldoInsuficienteException`
+     - `CuentaNoEncontradaException`
+     - `AutenticacionFallidaException`
+
+7. Fechas y Reportes
+   - Uso de `LocalDate` y `LocalDateTime` para registrar movimientos
+   - Reporte de últimos movimientos
+   - Exportación opcional a CSV o TXT
+
+8. Bonus
+   - Interfaz gráfica básica con JavaFX o consola con menús
+   - DAO genérico
+   - Registro de operaciones en logs
+
+Organización del Código:
+------------------------
+- Paquetes:
+  - `entidad` (Cliente, Cuenta, Movimiento)
+  - `dao` (interfaces DAO)
+  - `dao.impl` (implementaciones DAO)
+  - `servicio` (interfaces de lógica de negocio)
+  - `servicio.impl` (lógica de negocio)
+  - `util` (conexión, validaciones, logs)
+  - `main` (menú o simulación)
+
+Consejos:
+---------
+1. Empieza por el diseño de la base de datos.
+2. Luego crea las entidades y las interfaces DAO.
+3. Implementa la conexión a base de datos.
+4. Añade las reglas de negocio, validaciones y manejo de errores.
+5. Termina con interfaz gráfica o menú de consola.
+
+🎯 Este ejercicio te prepara para proyectos reales del mundo laboral y para el segundo año de DAM.

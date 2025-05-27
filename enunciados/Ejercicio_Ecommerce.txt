@@ -1,0 +1,56 @@
+🛒 EJERCICIO DE PROGRAMACIÓN: SIMULADOR DE E-COMMERCE
+
+Descripción:
+-------------
+Estás desarrollando una simulación sencilla de un e-commerce. El sistema debe permitir a un usuario agregar productos al carrito, procesar pagos, y verificar stock.
+
+Objetivo:
+---------
+Practicar estructuras condicionales (if), manejo de excepciones e implementación de interfaces en un contexto de programación orientada a objetos.
+
+Requisitos:
+-----------
+
+1. Productos
+   - Crea una clase `Producto` que tenga los atributos:
+     - nombre
+     - precio
+     - stock
+
+2. Carrito de Compras
+   - El carrito puede contener múltiples productos.
+   - Implementa métodos para:
+     - Agregar un producto (solo si hay stock disponible)
+     - Eliminar un producto
+     - Calcular el total de la compra
+
+3. Interfaz de Pago
+   - Crea una INTERFAZ `MetodoDePago` con un método:
+     - `pagar(monto)`
+   - Crea clases concretas que implementen esta interfaz:
+     - `PagoConTarjeta`
+     - `PagoConPaypal`
+
+4. Condicionales (if)
+   - Antes de agregar un producto, verifica si hay stock suficiente
+   - Antes de pagar, asegúrate de que el carrito no esté vacío
+   - Si el usuario no tiene suficiente saldo, lanza un error
+
+5. Excepciones
+   - Crea excepciones personalizadas para manejar errores comunes:
+     - `StockInsuficienteException`
+     - `CarritoVacioException`
+     - `PagoRechazadoException`
+
+6. Simulación de Flujo
+   - Simula una compra donde:
+     - El usuario agrega productos al carrito
+     - Intenta realizar el pago
+     - Se lanzan excepciones si hay errores
+     - Si todo sale bien, se descuenta el stock
+
+Sugerencia:
+-----------
+Puedes estructurar tu código usando clases, listas y excepciones para una mejor organización. Piensa en cómo se relacionan los objetos entre sí.
+
+¡Buena suerte programando!

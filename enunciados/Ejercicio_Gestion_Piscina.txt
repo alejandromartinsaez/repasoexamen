@@ -1,0 +1,71 @@
+🏊 EJERCICIO DE PROGRAMACIÓN: GESTIÓN DE PISCINA
+
+Descripción:
+-------------
+Vas a desarrollar un sistema de gestión para una piscina pública. El sistema debe permitir registrar usuarios, controlar accesos, gestionar clases y pagos. Este ejercicio está orientado a practicar condicionales, manejo de excepciones, uso de arrays y la implementación de métodos definidos en interfaces.
+
+Objetivo:
+---------
+Practicar estructuras condicionales (if), manejo de excepciones, arrays e interfaces con implementación concreta de métodos.
+
+Requisitos:
+-----------
+
+1. Usuarios
+   - Crea una clase `Usuario` con atributos:
+     - nombre
+     - edad
+     - esSocio (booleano)
+
+2. Registro de Usuarios
+   - Usa un ARRAY para almacenar múltiples usuarios registrados.
+   - Permite:
+     - Agregar un nuevo usuario
+     - Eliminar un usuario existente
+     - Buscar un usuario por nombre
+
+3. Acceso a la Piscina
+   - Solo pueden ingresar:
+     - Usuarios mayores de 5 años
+     - Usuarios socios o que hayan pagado entrada
+   - Lanza una excepción si no se cumplen las condiciones
+
+4. Gestión de Clases
+   - Crea una clase `ClaseNatacion` con:
+     - nombre del instructor
+     - lista de usuarios inscritos (array)
+   - Métodos para:
+     - Inscribir usuario (verificando edad mínima)
+     - Cancelar inscripción
+
+5. Interfaz de Pago
+   - Crea una INTERFAZ `MetodoDePago` con un método:
+     - `realizarPago(monto)`
+   - Implementa esta interfaz en clases:
+     - `PagoEfectivo`
+     - `PagoConTarjeta`
+     - Ambos deben tener su propia lógica de implementación
+
+6. Condicionales (if)
+   - Verifica condiciones como edad mínima, si es socio, si ya está inscrito, etc.
+   - Usa if para validar pagos y accesos
+
+7. Excepciones
+   - Define excepciones personalizadas:
+     - `EdadInsuficienteException`
+     - `UsuarioNoSocioException`
+     - `PagoFallidoException`
+
+8. Simulación de Flujo
+   - Simula:
+     - Registro de usuarios
+     - Inscripción a clases
+     - Acceso a la piscina
+     - Realización de pagos
+     - Manejo de errores
+
+Sugerencia:
+-----------
+Organiza el sistema en clases y usa arrays para manejar colecciones de objetos. Implementa métodos definidos en interfaces para representar comportamientos distintos de pago.
+
+¡Disfruta programando y nadando entre clases!

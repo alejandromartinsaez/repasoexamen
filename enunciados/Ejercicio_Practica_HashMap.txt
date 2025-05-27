@@ -1,0 +1,46 @@
+🧠 EJERCICIO DE PROGRAMACIÓN: PRÁCTICA CON HASHMAP (MAPAS / DICCIONARIOS)
+
+Descripción:
+-------------
+Este ejercicio está diseñado para practicar exclusivamente el uso de estructuras tipo HashMap (también conocidos como diccionarios en algunos lenguajes). No se requiere el uso de clases ni programación orientada a objetos. La idea es centrarse en la manipulación de claves y valores.
+
+Objetivo:
+---------
+Practicar cómo se crean, actualizan, acceden y eliminan elementos en un HashMap.
+
+Requisitos:
+-----------
+
+1. Crear un HashMap
+   - Crea un HashMap que represente un inventario de productos.
+   - Las claves deben ser los nombres de los productos (strings).
+   - Los valores deben ser la cantidad disponible (números enteros).
+
+2. Operaciones Básicas
+   - Agrega al menos 5 productos al HashMap.
+   - Muestra el contenido completo del inventario.
+   - Actualiza la cantidad de un producto específico.
+   - Elimina un producto del inventario.
+
+3. Consultas
+   - Verifica si un producto específico está en el inventario.
+   - Recupera la cantidad disponible de un producto dado.
+   - Usa condicionales (if) para mostrar un mensaje si:
+     - El producto no existe
+     - La cantidad es cero (agotado)
+
+4. Recorridos
+   - Recorre el HashMap e imprime:
+     - Todos los productos y sus cantidades
+     - Solo los productos que tengan más de 10 unidades
+
+5. Bonus
+   - Crea un nuevo HashMap para llevar el registro de precios.
+   - Relaciona los nombres de productos con su precio.
+   - Muestra el precio total del inventario (cantidad * precio por producto)
+
+Sugerencia:
+-----------
+No uses clases ni programación orientada a objetos. Usa únicamente variables, estructuras básicas como HashMap (diccionario), condicionales y ciclos para resolver el ejercicio.
+
+¡Perfecto para dominar los mapas!

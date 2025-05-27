@@ -1,0 +1,82 @@
+📚 EJERCICIO DE PROGRAMACIÓN: GESTIÓN DE BIBLIOTECA
+
+Descripción:
+-------------
+Vas a desarrollar un sistema de gestión para una biblioteca. El sistema debe permitir registrar usuarios, gestionar préstamos de libros, controlar fechas de devolución, y aplicar penalizaciones por retraso. El objetivo es practicar arrays, condicionales, excepciones e interfaces con métodos implementados.
+
+Objetivo:
+---------
+Practicar estructuras condicionales (if), manejo de excepciones, arrays, gestión de tiempo e implementación de interfaces.
+
+Requisitos:
+-----------
+
+1. Usuarios
+   - Crea una clase `Usuario` con los atributos:
+     - nombre
+     - id
+     - librosPrestados (array)
+
+2. Libros
+   - Crea una clase `Libro` con los atributos:
+     - título
+     - autor
+     - disponible (booleano)
+
+3. Registro y Gestión
+   - Usa ARRAYS para almacenar:
+     - Lista de usuarios
+     - Lista de libros disponibles
+   - Métodos para:
+     - Registrar usuarios
+     - Agregar nuevos libros
+     - Buscar usuarios o libros por nombre
+
+4. Préstamos
+   - Implementa la funcionalidad de prestar libros:
+     - Verifica que el libro esté disponible
+     - Asigna el libro al usuario
+     - Registra la fecha del préstamo
+     - Establece un plazo de devolución (ej. 7 días)
+   - Implementa la devolución:
+     - Verifica si se ha pasado el plazo
+     - Lanza excepción si hay retraso
+
+5. Gestión de Tiempo
+   - Usa fechas para controlar:
+     - Fecha de préstamo
+     - Fecha de devolución
+   - Calcula si hay retraso en la entrega
+   - Aplica penalizaciones si se excede el tiempo
+
+6. Interfaz de Notificación
+   - Crea una INTERFAZ `Notificador` con un método:
+     - `enviarAviso(usuario, mensaje)`
+   - Crea implementaciones concretas:
+     - `NotificadorEmail`
+     - `NotificadorSMS`
+   - Ambos deben mostrar el mensaje de forma distinta
+
+7. Condicionales (if)
+   - Verifica si un libro está disponible
+   - Controla el número máximo de libros prestados
+   - Verifica si hay retraso
+
+8. Excepciones
+   - Define excepciones personalizadas:
+     - `LibroNoDisponibleException`
+     - `UsuarioNoEncontradoException`
+     - `EntregaTardiaException`
+
+9. Simulación de Flujo
+   - Simula:
+     - Registro de usuarios y libros
+     - Préstamos y devoluciones
+     - Notificaciones por retraso
+     - Manejo de excepciones
+
+Sugerencia:
+-----------
+Usa arrays para manejar listas, fechas para gestionar tiempos, e interfaces para separar la lógica de notificaciones. Aplica buenas prácticas de programación orientada a objetos.
+
+¡Buena lectura y buena programación!

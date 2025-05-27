@@ -1,0 +1,67 @@
+✈️ EJERCICIO INTEGRAL DE PROGRAMACIÓN: SISTEMA DE GESTIÓN PARA EMPRESA DE VIAJES
+
+Descripción:
+-------------
+Desarrolla un sistema completo para gestionar una empresa de viajes. Este proyecto será una simulación avanzada e integradora pensada para estudiantes de 1º de DAM, incluyendo múltiples interfaces, conexiones a base de datos (MariaDB), estructuras complejas como doble HashMap, uso de condicionales, manejo de excepciones y más.
+
+Objetivo:
+---------
+Practicar programación modular, acceso a base de datos, estructuras de datos avanzadas y patrones de diseño (DAO), orientado a la arquitectura real de una aplicación.
+
+Requisitos:
+-----------
+
+1. Entidades Principales
+   - Cliente (id, nombre, email)
+   - Vuelo (id, origen, destino, fecha, plazasDisponibles)
+   - Hotel (id, ciudad, nombre, habitacionesDisponibles)
+   - Reserva (id, cliente, vuelo, hotel, fechaReserva)
+
+2. Estructura de Datos
+   - Utiliza un HashMap<String, HashMap<Integer, Vuelo>> para agrupar vuelos por país de destino.
+   - Utiliza un HashMap<String, HashMap<Integer, Hotel>> para agrupar hoteles por ciudad.
+   - Usa arrays y listas para representar reservas y listas de clientes.
+
+3. Interfaces
+   - Interfaz `GestorReservas` con métodos:
+     - `void reservarVuelo(int clienteId, int vueloId)`
+     - `void reservarHotel(int clienteId, int hotelId)`
+   - Interfaz `Buscador` con métodos:
+     - `List<Vuelo> buscarVuelosPorDestino(String pais)`
+     - `List<Hotel> buscarHotelesPorCiudad(String ciudad)`
+   - Interfaz `Notificador` (con implementación para Email y SMS)
+
+4. DAO y Base de Datos
+   - Implementa DAO para cada entidad:
+     - ClienteDAO, VueloDAO, HotelDAO, ReservaDAO
+   - Crea las tablas correspondientes en MariaDB y gestiona la conexión desde código.
+   - Operaciones CRUD completas desde el sistema hacia MariaDB.
+   - Control de excepciones en conexión y ejecución de sentencias SQL.
+
+5. Condicionales y Lógica de Negocio
+   - Antes de confirmar una reserva, verifica con `if`:
+     - Que haya plazas o habitaciones disponibles
+     - Que el cliente exista
+   - Si no hay disponibilidad, lanza excepciones personalizadas:
+     - `SinPlazasDisponiblesException`
+     - `ClienteNoEncontradoException`
+
+6. Gestión de Fechas
+   - Usa objetos de fecha para calcular reservas futuras o caducadas
+   - Muestra avisos si un vuelo está dentro de las próximas 24 horas
+
+7. Notificaciones
+   - Implementa la interfaz `Notificador` para avisar por consola o correo (simulado) al cliente
+   - Ejemplo: “¡Tu vuelo a París sale en menos de 24 horas!”
+
+8. Extras Opcionales
+   - Menú por consola o interfaz gráfica básica
+   - Filtrado avanzado: mostrar vuelos por disponibilidad, fecha y ciudad
+   - Exportar reservas a CSV
+   - DAO genérico reutilizable
+
+Sugerencia:
+-----------
+Divide el proyecto por paquetes: entidad, dao, interfaz, implementación, servicio, etc. Comienza conectando a la base de datos y construyendo las clases DAO antes de añadir lógica compleja.
+
+💡 Este ejercicio es ideal para simular una aplicación real y compleja al nivel más alto de 1º de DAM. ¡Desafío garantizado!

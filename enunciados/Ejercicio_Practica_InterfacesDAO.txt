@@ -1,0 +1,63 @@
+🗄️ EJERCICIO DE PROGRAMACIÓN: PRÁCTICA CON INTERFACES DAO (Data Access Object)
+
+Descripción:
+-------------
+Este ejercicio está orientado a practicar el patrón de diseño DAO, una forma estructurada de separar la lógica de acceso a datos del resto del sistema. Vas a implementar interfaces DAO y clases concretas que acceden a datos simulados en memoria (sin bases de datos reales).
+
+Objetivo:
+---------
+Practicar el uso de interfaces, implementaciones concretas y el patrón DAO para acceder y modificar datos.
+
+Requisitos:
+-----------
+
+1. Entidad Base
+   - Crea una clase simple `Producto` con los siguientes atributos:
+     - id (entero)
+     - nombre (string)
+     - precio (double)
+
+2. Interfaz DAO
+   - Define una INTERFAZ `ProductoDAO` con los siguientes métodos:
+     - `List<Producto> obtenerTodos()`
+     - `Producto obtenerPorId(int id)`
+     - `void guardar(Producto producto)`
+     - `void actualizar(Producto producto)`
+     - `void eliminar(int id)`
+
+3. Implementación en Memoria
+   - Crea una clase `ProductoDAOImpl` que implementa `ProductoDAO`
+   - Usa un ArrayList o HashMap como almacenamiento interno
+   - Implementa toda la lógica de acceso, actualización y eliminación en esta clase
+
+4. Uso del DAO
+   - Simula una serie de operaciones:
+     - Agregar varios productos
+     - Listarlos
+     - Buscar uno por ID
+     - Actualizar su precio
+     - Eliminar uno
+
+5. Validaciones y Condicionales
+   - Verifica si el producto existe antes de actualizar o eliminar
+   - Lanza una excepción si se intenta acceder a un ID inexistente
+
+6. Excepciones
+   - Crea una excepción personalizada `ProductoNoEncontradoException`
+
+7. Estructura
+   - Separa la lógica en:
+     - Clase de entidad (`Producto`)
+     - Interfaz DAO (`ProductoDAO`)
+     - Implementación (`ProductoDAOImpl`)
+     - Clase main con el flujo de operaciones
+
+Bonus:
+------
+Puedes extender el ejercicio creando un DAO genérico reutilizable para cualquier tipo de entidad.
+
+Sugerencia:
+-----------
+Este patrón es ideal para proyectos que luego necesitarán escalar hacia persistencia con bases de datos reales.
+
+¡Una práctica excelente para arquitectura limpia y mantenible!
