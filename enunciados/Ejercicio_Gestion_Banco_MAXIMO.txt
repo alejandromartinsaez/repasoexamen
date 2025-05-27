@@ -2,7 +2,9 @@
 
 Descripción:
 -------------
-Este ejercicio simula un sistema real de banca digital. El objetivo es desarrollar una aplicación completa que permita a los clientes interactuar con sus cuentas bancarias, transferir dinero, consultar movimientos y más. Incluye uso de interfaces, DAOs, estructuras como HashMap anidados, conexión a base de datos MariaDB, manejo de fechas, excepciones y lógica de negocio con `if`.
+Este ejercicio simula un sistema real de banca digital. El objetivo es desarrollar una aplicación completa que permita a los clientes interactuar con sus cuentas bancarias,
+transferir dinero, consultar movimientos y más. Incluye uso de interfaces, DAOs, estructuras como HashMap anidados, conexión a base de datos MariaDB, manejo de fechas,
+excepciones y lógica de negocio con `if`.
 
 Objetivo:
 ---------
@@ -11,17 +13,17 @@ Aplicar todos los conocimientos adquiridos sobre POO, DAO, SQL, estructuras de d
 Requisitos:
 -----------
 
-1. Entidades Principales
+REALIZADO 1. Entidades Principales
    - Cliente (id, nombre, email, contraseña)
    - Cuenta (id, clienteId, saldo, tipoCuenta)
    - Movimiento (id, cuentaId, tipo [INGRESO/RETIRADA/TRANSFERENCIA], cantidad, fecha)
 
-2. Base de Datos (MariaDB)
+REALIZADO 2. Base de Datos (MariaDB)
    - Crea las tablas Cliente, Cuenta y Movimiento
    - Conexión vía JDBC
    - CRUD completo con excepciones SQL y control de recursos
 
-3. DAO e Interfaces
+REALIZADO 3. DAO e Interfaces
    - Interfaces DAO para ClienteDAO, CuentaDAO y MovimientoDAO
    - Métodos: guardar, buscarPorId, actualizar, eliminar, listarTodos
    - Uso de `try-catch` para capturar y registrar errores de conexión o SQL
@@ -50,7 +52,7 @@ Requisitos:
      - `CuentaNoEncontradaException`
      - `AutenticacionFallidaException`
 
-7. Fechas y Reportes
+NO REALIZAR 7. Fechas y Reportes
    - Uso de `LocalDate` y `LocalDateTime` para registrar movimientos
    - Reporte de últimos movimientos
    - Exportación opcional a CSV o TXT
@@ -58,7 +60,7 @@ Requisitos:
 8. Bonus
    - Interfaz gráfica básica con JavaFX o consola con menús
    - DAO genérico
-   - Registro de operaciones en logs
+   NO REALIZAR- Registro de operaciones en logs
 
 Organización del Código:
 ------------------------
