@@ -72,4 +72,40 @@ public class VueloDAO_DB implements VueloDAO {
         }
         return lista;
     }
+
+    @Override
+    public boolean actualizar(Vuelo vuelo) {
+        String sql = "UPDATE vuelos SET origen = ?, destino = ?, fecha = ?, plazasDisponibles = ? WHERE id = ?";
+
+        try (Connection conn = Database.getConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, vuelo.getOrigen());
+            stmt.setString(2, vuelo.getDestino());
+            stmt.setDate(3, Date.valueOf(vuelo.getFecha()));
+            stmt.setInt(4, vuelo.getPlazasDisponibles());
+            stmt.setInt(5, vuelo.getId());
+
+            int filasActualizadas = stmt.executeUpdate();
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar vuelo: " + e.getMessage());
+            return false;
+        }
+    }
+
+    @Override
+    public boolean eliminar(int id) {
+        String sql = "DELETE FROM vuelo WHERE id = ?";
+        try (Connection conn = Database.getConexion();
+             PreparedStatement st = conn.prepareStatement(sql)) {
+            st.setInt(1, id);
+            int filasEliminadas = st.executeUpdate();
+            return filasEliminadas > 0;
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar el vuelo " + e.getMessage());
+            return false;
+        }
+    }
 }

@@ -9,8 +9,8 @@ public interface VueloDAO {
     boolean guardar(Vuelo vuelo);
     Vuelo buscarPorID(int id);
     List<Vuelo> listarTodos();
-    // boolean actualizar(Vuelo vuelo);
-    //Vuelo eliminar(int id);
+    boolean actualizar(Vuelo vuelo);
+    boolean eliminar(int id);
 
     //List<Vuelo> buscarPorDestino(String destino);
     //List<Vuelo> buscarPorFecha(LocalDate fecha);
