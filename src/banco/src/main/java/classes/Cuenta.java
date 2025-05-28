@@ -9,11 +9,15 @@ public class Cuenta {
     //Constructor
     public Cuenta(){};
 
-    public Cuenta(int id, int codCliente, double saldo, String tipoCuenta) {
+    public Cuenta(int id, int codCliente, String tipoCuenta) {
         this.id = id;
         this.codCliente = codCliente;
-        this.saldo = saldo;
         this.tipoCuenta = tipoCuenta;
+    }
+
+    public Cuenta(int id, int codCliente, double saldo, String tipoCuenta) {
+        this(id, codCliente, tipoCuenta);
+        this.saldo = saldo;
     }
 
     //Methods

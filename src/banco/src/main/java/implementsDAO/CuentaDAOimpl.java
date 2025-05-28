@@ -5,8 +5,7 @@ import interfacesDAO.CuentaDAO;
 import utils.BBDDConfiguration;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CuentaDAOimpl implements CuentaDAO {
     //Attributes
