@@ -11,13 +11,13 @@ Practicar el uso de interfaces, implementaciones concretas y el patrón DAO para
 Requisitos:
 -----------
 
-1. Entidad Base
+REALIZADO 1. Entidad Base
    - Crea una clase simple `Producto` con los siguientes atributos:
      - id (entero)
      - nombre (string)
      - precio (double)
 
-2. Interfaz DAO
+REALIZADO 2. Interfaz DAO
    - Define una INTERFAZ `ProductoDAO` con los siguientes métodos:
      - `List<Producto> obtenerTodos()`
      - `Producto obtenerPorId(int id)`
@@ -25,12 +25,12 @@ Requisitos:
      - `void actualizar(Producto producto)`
      - `void eliminar(int id)`
 
-3. Implementación en Memoria
+REALIZADO 3. Implementación en Memoria
    - Crea una clase `ProductoDAOImpl` que implementa `ProductoDAO`
    - Usa un ArrayList o HashMap como almacenamiento interno
    - Implementa toda la lógica de acceso, actualización y eliminación en esta clase
 
-4. Uso del DAO
+REALIZADO 4. Uso del DAO
    - Simula una serie de operaciones:
      - Agregar varios productos
      - Listarlos
@@ -38,11 +38,11 @@ Requisitos:
      - Actualizar su precio
      - Eliminar uno
 
-5. Validaciones y Condicionales
+REALIZADO 5. Validaciones y Condicionales
    - Verifica si el producto existe antes de actualizar o eliminar
    - Lanza una excepción si se intenta acceder a un ID inexistente
 
-6. Excepciones
+REALIZADO 6. Excepciones
    - Crea una excepción personalizada `ProductoNoEncontradoException`
 
 7. Estructura
