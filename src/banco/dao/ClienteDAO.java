@@ -2,10 +2,13 @@ package banco.dao;
 
 import banco.components.Cliente;
 
+import java.util.List;
+
 public interface ClienteDAO {
-    void guardar(Cliente cliente);
-    void buscarPorID(int id);
-    void buscarPorEmail(String email);
-    void actualizar(Cliente cliente);
-    void eliminar(int id);
+    boolean guardar(Cliente cliente);
+    Cliente buscarPorID(int id);
+    Cliente buscarPorEmail(String email);
+    List<Cliente> listarTodos();
+    boolean actualizar(Cliente cliente);
+    boolean eliminar(int id);
 }

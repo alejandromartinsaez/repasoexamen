@@ -1,11 +1,8 @@
 package banco;
 
-import banco.components.Cliente;
-import banco.components.Hotel;
-import banco.components.Reserva;
-import banco.components.Vuelo;
-import banco.dao.VueloDAO;
-import banco.dao.impl.VueloDAO_DB;
+import banco.components.*;
+import banco.dao.*;
+import banco.dao.impl.*;
 import banco.database.PruebaConexion;
 
 import java.time.LocalDate;
@@ -57,6 +54,48 @@ public class Banco {
         for (Vuelo vuelo : vuelos2) {
             System.out.println(vuelo);
         }
+
+
+
+        // CLIENTE CLASE
+
+        ClienteDAO clienteDAO = new ClienteDAO_DB();
+
+        Cliente newCliente = new Cliente(1, "Carlos", "carlos@gmail.com");
+        boolean guardado1 = clienteDAO.guardar(newCliente);
+        if (guardado1) {
+            System.out.println("Cliente guardado correctamente");
+        } else {
+            System.out.println("El cliente no se ha podido guardar");
+        }
+
+        // Buscar por ID
+        Cliente c = clienteDAO.buscarPorID(1);
+        if (c != null) {
+            System.out.println("CLiente encontrado " + c);
+        } else {
+            System.out.println("El cliente no existe");
+        }
+
+        // Buscar por EMAIL
+
+        Cliente c2 = clienteDAO.buscarPorEmail("carlos@gmail.com");
+        if (c2 != null) {
+            System.out.println("Cliente encontrado -> " + c2);
+        } else {
+            System.out.println("El Cliente no existe.");
+        }
+
+        // Actualizar cliente
+        Cliente clienteActualizado = new Cliente(1, "Pepe", "pepe@gmail.com");
+        if (clienteDAO.actualizar(clienteActualizado)) {
+            System.out.println("Cliente actualizado");
+        } else {
+            System.out.println("No se ha podido actualizar el cliente");
+        }
+        // Eliminar cliente
+
+
     }
 }
 
